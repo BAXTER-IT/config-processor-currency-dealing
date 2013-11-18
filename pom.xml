@@ -10,7 +10,7 @@
 
     <groupId>com.baxter.config.processor.cd</groupId>
     <artifactId>baxter-config-processor-currency-dealing</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <name>Configuration Processor for Currency Dealing</name>
     <description>Configuration processor to be used with Baxter Configuration Server.</description>
@@ -23,7 +23,8 @@
         <connection>scm:git:ssh://git@git.cloudbees.com/baxter/config-processor-currency-dealing.git</connection>
         <developerConnection>scm:git:ssh://git@git.cloudbees.com/baxter/config-processor-currency-dealing.git</developerConnection>
         <url>ssh://git@git.cloudbees.com/baxter/config-processor-currency-dealing.git</url>
-    </scm>
+      <tag>baxter-config-processor-currency-dealing-1.2</tag>
+  </scm>
 
     <build>
 
