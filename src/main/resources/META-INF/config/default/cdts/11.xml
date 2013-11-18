@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_05" class="java.beans.XMLDecoder"> 
+ <object class="java.util.HashMap"> 
+  <void method="put"> 
+   <int>1</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>userID</string> 
+    </void> 
+    <void property="label"> 
+     <string>User</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>User ID</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>2</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>direction</string> 
+    </void> 
+    <void property="label"> 
+     <string>B/S</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Buy/Sell</string> 
+    </void> 
+    <void property="width"> 
+     <int>50</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>3</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>originalQuantity</string> 
+    </void> 
+    <void property="label"> 
+     <string>Orig.Qty</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Orig.Qty</string> 
+    </void> 
+    <void property="width"> 
+     <int>100</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>4</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>originalPrice</string> 
+    </void> 
+    <void property="label"> 
+     <string>Orig.price</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Orig.price</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>5</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>deliveryCode</string> 
+    </void> 
+    <void property="label"> 
+     <string>DlvCode</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>DlvCode</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>6</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>reutersCode</string> 
+    </void> 
+    <void property="label"> 
+     <string>Contract</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Contract</string> 
+    </void> 
+    <void property="width"> 
+     <int>60</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>7</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>filledPrice</string> 
+    </void> 
+    <void property="label"> 
+     <string>Fill.price</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Fill.price</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>8</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>fillCashPrice</string> 
+    </void> 
+    <void property="label"> 
+     <string>Fill.cash price</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Fill.cash price</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>9</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>filledQuantity</string> 
+    </void> 
+    <void property="label"> 
+     <string>Fill.qty</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Fill.qty</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>10</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>marketMaker</string> 
+    </void> 
+    <void property="label"> 
+     <string>Market Maker</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Market Maker</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>11</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>status</string> 
+    </void> 
+    <void property="label"> 
+     <string>Status</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Status</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>12</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>filledAt</string> 
+    </void> 
+    <void property="label"> 
+     <string>Timestamp</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Timestamp</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>13</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>tradeID</string> 
+    </void> 
+    <void property="label"> 
+     <string>Trade ID</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Trade ID</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>14</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>splittedParts</string> 
+    </void> 
+    <void property="label"> 
+     <string>Splitting info</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Splitting info</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>15</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>manual</string> 
+    </void> 
+    <void property="label"> 
+     <string>Manual</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Manual</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>17</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>orderID</string> 
+    </void> 
+    <void property="label"> 
+     <string>Order ID</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Order ID</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>16</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>userGroupID</string> 
+    </void> 
+    <void property="label"> 
+     <string>UserGroupID</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>UserGroupID</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>19</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>arrivedAt</string> 
+    </void> 
+    <void property="label"> 
+     <string>Submit Time</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Submit Time</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <int>18</int> 
+   <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+    <void property="identifier"> 
+     <string>type</string> 
+    </void> 
+    <void property="label"> 
+     <string>Order Type</string> 
+    </void> 
+    <void property="tooltip"> 
+     <string>Order Type</string> 
+    </void> 
+    <void property="width"> 
+     <int>120</int> 
+    </void> 
+   </object> 
+  </void>
+    <void method="put"> 
+     <int>20</int> 
+     <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+      <void property="identifier"> 
+       <string>brokerage</string> 
+      </void> 
+      <void property="label"> 
+       <string>Brokerage</string> 
+      </void> 
+      <void property="tooltip"> 
+       <string>Brokerage</string> 
+      </void> 
+      <void property="width"> 
+       <int>60</int> 
+      </void> 
+     </object> 
+  </void>  
+      <void method="put"> 
+       <int>21</int> 
+       <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+        <void property="identifier"> 
+         <string>validFrom</string> 
+        </void> 
+        <void property="label"> 
+         <string>Valid From</string> 
+        </void> 
+        <void property="tooltip"> 
+         <string>Valid From</string> 
+        </void> 
+        <void property="width"> 
+         <int>60</int> 
+        </void> 
+       </object> 
+  </void> 
+      <void method="put"> 
+       <int>22</int> 
+       <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+        <void property="identifier"> 
+         <string>brokerageMode</string> 
+        </void> 
+        <void property="label"> 
+         <string>brokerageMode</string> 
+        </void> 
+        <void property="tooltip"> 
+         <string>brokerageMode</string> 
+        </void> 
+        <void property="width"> 
+         <int>60</int> 
+        </void> 
+       </object> 
+  </void>  
+       <void method="put"> 
+        <int>23</int> 
+        <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+         <void property="identifier"> 
+          <string>tiering</string> 
+         </void> 
+         <void property="label"> 
+          <string>tiering</string> 
+         </void> 
+         <void property="tooltip"> 
+          <string>tiering</string> 
+         </void> 
+         <void property="width"> 
+          <int>60</int> 
+         </void> 
+        </object> 
+  </void>  
+        <void method="put"> 
+         <int>24</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>originalOrderID</string> 
+          </void> 
+          <void property="label"> 
+           <string>originalOrderID</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>originalOrderID</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>  
+        <void method="put"> 
+         <int>25</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>accepted</string> 
+          </void> 
+          <void property="label"> 
+           <string>accepted</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>accepted</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>  
+        <void method="put"> 
+         <int>26</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>allocated</string> 
+          </void> 
+          <void property="label"> 
+           <string>allocated</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>allocated</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>  
+        <void method="put"> 
+         <int>27</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>allOrNone</string> 
+          </void> 
+          <void property="label"> 
+           <string>allOrNone</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>allOrNone</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>  
+        <void method="put"> 
+         <int>28</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>ocoRef</string> 
+          </void> 
+          <void property="label"> 
+           <string>ocoRef</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>ocoRef</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>  
+        <void method="put"> 
+         <int>29</int> 
+         <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+          <void property="identifier"> 
+           <string>referencePrice</string> 
+          </void> 
+          <void property="label"> 
+           <string>referencePrice</string> 
+          </void> 
+          <void property="tooltip"> 
+           <string>referencePrice</string> 
+          </void> 
+          <void property="width"> 
+           <int>60</int> 
+          </void> 
+         </object> 
+  </void>
+   
+          <void method="put"> 
+           <int>30</int> 
+           <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+            <void property="identifier"> 
+             <string>sessionDate</string> 
+            </void> 
+            <void property="label"> 
+             <string>sessionDate</string> 
+            </void> 
+            <void property="tooltip"> 
+             <string>sessionDate</string> 
+            </void> 
+            <void property="width"> 
+             <int>60</int> 
+            </void> 
+           </object> 
+  </void>  
+    
+          <void method="put"> 
+           <int>31</int> 
+           <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+            <void property="identifier"> 
+             <string>validity</string> 
+            </void> 
+            <void property="label"> 
+             <string>validity</string> 
+            </void> 
+            <void property="tooltip"> 
+             <string>validity</string> 
+            </void> 
+            <void property="width"> 
+             <int>60</int> 
+            </void> 
+           </object> 
+  </void>  
+    
+          <void method="put"> 
+           <int>32</int> 
+           <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+            <void property="identifier"> 
+             <string>valueDate</string> 
+            </void> 
+            <void property="label"> 
+             <string>valueDate</string> 
+            </void> 
+            <void property="tooltip"> 
+             <string>valueDate</string> 
+            </void> 
+            <void property="width"> 
+             <int>60</int> 
+            </void> 
+           </object> 
+  </void>  
+    
+          <void method="put"> 
+           <int>33</int> 
+           <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+            <void property="identifier"> 
+             <string>market</string> 
+            </void> 
+            <void property="label"> 
+             <string>market</string> 
+            </void> 
+            <void property="tooltip"> 
+             <string>market</string> 
+            </void> 
+            <void property="width"> 
+             <int>60</int> 
+            </void> 
+           </object> 
+  </void>  
+     
+          <void method="put"> 
+           <int>34</int> 
+           <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+            <void property="identifier"> 
+             <string>securityType</string> 
+            </void> 
+            <void property="label"> 
+             <string>securityType</string> 
+            </void> 
+            <void property="tooltip"> 
+             <string>securityType</string> 
+            </void> 
+            <void property="width"> 
+             <int>60</int> 
+            </void> 
+           </object> 
+  </void>  
+      
+            <void method="put"> 
+             <int>35</int> 
+             <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+              <void property="identifier"> 
+               <string>productComplex</string> 
+              </void> 
+              <void property="label"> 
+               <string>productComplex</string> 
+              </void> 
+              <void property="tooltip"> 
+               <string>productComplex</string> 
+              </void> 
+              <void property="width"> 
+               <int>60</int> 
+              </void> 
+             </object> 
+  </void>  
+      
+            <void method="put"> 
+             <int>36</int> 
+             <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+              <void property="identifier"> 
+               <string>targetProductComplex</string> 
+              </void> 
+              <void property="label"> 
+               <string>targetProductComplex</string> 
+              </void> 
+              <void property="tooltip"> 
+               <string>targetProductComplex</string> 
+              </void> 
+              <void property="width"> 
+               <int>60</int> 
+              </void> 
+             </object> 
+  </void>  
+       
+            <void method="put"> 
+             <int>37</int> 
+             <object class="com.baxter.cdtradesupervisor.TradeHistoryProperty"> 
+              <void property="identifier"> 
+               <string>targetDelivery</string> 
+              </void> 
+              <void property="label"> 
+               <string>targetDelivery</string> 
+              </void> 
+              <void property="tooltip"> 
+               <string>targetDelivery</string> 
+              </void> 
+              <void property="width"> 
+               <int>60</int> 
+              </void> 
+             </object> 
+  </void>    
+ </object> 
+</java> 

@@ -1,0 +1,2085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/currency-dealing/conf/generic-properties"
+    xmlns:c="http://baxter-it.com/config/component" xmlns:conf="http://baxter-it.com/config">
+
+    <!-- THIS IS REALLY A TEMPORARY SOLUTION SHOULD BE REFACTORED TO GRANULAR 
+		CONFIGURATIONS ASAP -->
+
+    <property id="limit.update.in.thread" value="true">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="BAXTER_USER_NAME" value="BAX">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="MM_PRICE_LOGGING_ENABLED" value="false">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="validityCheckAtBankComponent" value="">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="delayBetweenTestCalls" value="10000">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="delayBetweenTestCalls" value="50000000">
+        <c:component id="cd-oh" />
+    </property>
+
+    <property id="TradeInterceptorSettings_File" value="/var/local/baxter/cd/TradeInterceptorSettings.xml">
+        <c:component id="cd-me" />
+    </property>
+
+    <conf:reference id="BEANS_INIFILE" type="ini" componentId="beans">
+        <c:component id="cd-me" />
+        <c:component id="cd-oh" />
+        <c:component id="brokerage" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-cdts" />
+    </conf:reference>
+
+    <conf:reference id="beans.iniFile" type="ini" componentId="beans">
+        <c:component id="blazeds" />
+        <c:component id="servlet" />
+    </conf:reference>
+
+    <property id="MViniFile" value="DummyValue">
+        <c:component id="servlet" />
+    </property>
+    
+    <property id="communicationMode" value="Plain">
+        <c:component id="servlet" />
+    </property>
+    
+    <property id="DoGetIPs" value="192.168.9.14">
+        <c:component id="servlet" />
+    </property>
+
+    <conf:reference id="UDPiniFile" type="ini" componentId="servlet-udp">
+        <c:component id="servlet" />
+    </conf:reference>
+    <property id="maxDelayBetweenTwoReceivedHeartbeats" value="5500">
+        <c:component id="servlet-udp" />
+    </property>
+    <property id="maxDelayBetweenTwoSentHeartbeats" value="5001">
+        <c:component id="servlet-udp" />
+    </property>
+    <property id="host" value="localhost">
+        <c:component id="servlet-udp" />
+    </property>
+    <property id="socketport" value="1626">
+        <c:component id="servlet-udp" />
+    </property>
+    <property id="udpport" value="1626">
+        <c:component id="servlet-udp" />
+    </property>
+    <property id="UDPReceiverHost" value="localhost">
+        <c:component id="servlet-udp" />
+    </property>
+
+    <property id="MAX_ORDER_NO_WAITING_TO_BE_PROCESSED" value="100">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="StoreMMPricesInDB" value="false">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="MINIMUM_TICKET_SIZE" value="10000">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="clientAcknowledgeUserJMSMessages" value="false">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="maxMidPriceHistory" value="21">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="TradeBlockTimerDelay" value="1000">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="TradeProtectionForMM" value="">
+        <c:component id="cd-me" />
+    </property>
+
+
+    <!-- #Using MySQL for storing the prices from Market makers(cancelled prices) -->
+    <property id="USE_MYSQL" value="true">
+        <c:component id="cd-me" />
+    </property>
+
+    <!--# The initialization file for cme reutersCodes -->
+    <conf:reference id="CME_INIFILE" type="ini" componentId="cme">
+        <c:component id="cd-me" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+        <c:component id="beans" />
+        <c:component id="quoteHandler" />
+        <c:component id="cd-umr" />
+        <c:component id="cd-pt" />
+        <c:component id="cd-cdts" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-cg" />
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+    </conf:reference>
+
+    <conf:reference id="BULKEDTRADES_INIFILE" type="ini" componentId="bulked-trades">
+        <c:component id="cd-umr" />
+    </conf:reference>
+
+    <!--# The time, when the exchange rates are refreshed in the database. -->
+    <property id="exchangeRateRefreshHour" value="15">
+        <c:component id="cd-me" />
+    </property>
+
+    <!--# The time, when user positions are reset to 0. -->
+    <property id="futuresPositionsResetHour" value="20">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="spotPositionsResetHour" value="17">
+        <c:component id="cd-me" />
+    </property>
+
+    <!--# Maximum of orders, which are waiting for to be cancelled out to DB. 
+		# If this limit is reached, ME shuts down. -->
+
+    <property id="MAX_ORDER_NO_WAITING_FOR_CANCEL" value="2000">
+        <c:component id="cd-me" />
+    </property>
+
+    <!--# MAximum size of incoming orders in TradingChannel, which are not processed 
+		yet. # If this limit is reached, ME shuts down. -->
+    <property id="PositionLimit_ResetHour" value="20">
+        <c:component id="cd-me" />
+    </property>
+
+    <property id="MAX_ORDER_NO_WAITING_FOR_CANCEL" value="2000">
+        <c:component id="cd-me" />
+    </property>
+
+    <!--# Maximum size of incoming orders in TradingChannel, which are not processed 
+		yet. # If this limit is reached, ME shuts down. -->
+
+    <property id="MAX_ORDER_NO_WAITING_FOR_TC" value="1000">
+        <c:component id="cd-me" />
+    </property>
+
+    <conf:reference id="IPM_INIFILE" type="ini" componentId="ipm">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv-cpp" />
+        <c:component id="blazeds" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-cg" />
+        <c:component id="servletmv" />
+        <c:component id="cd-cdts" />
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+
+    <property id="IsValidityCheckAtBankInterfaceRequired" value="true">
+        <c:component id="cd-me" />
+    </property>
+
+    <conf:reference id="DB_INIFILE" type="ini" componentId="db">
+        <c:component id="cd-me" />
+        <c:component id="quoteHandler" />
+        <c:component id="cd-umr" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-cg" />
+        <c:component id="cd-cdts" />
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+
+    <conf:reference id="DBINIFILE" type="ini" componentId="db">
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </conf:reference>
+
+    <!-- TODO merge the two blocks together with the syntax of <c:component id="cd-me">12</c:component> -->
+
+    <property id="DB_ConnectionLimit" value="1">
+        <c:component id="cd-me" />
+    </property>
+    <property id="DB_ConnectionLimit" value="1">
+        <c:component id="cd-mv" />
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="DB_ConnectionLimit" value="20">
+        <c:component id="cd-oh" />
+    </property>
+    <property id="AcknowledgeReceiveDelay" value="2000">
+        <c:component id="cd-me" />
+    </property>
+    <property id="WarmUpDelay" value="5000">
+        <c:component id="cd-me" />
+    </property>
+    <property id="BANK_QUEUE_ID" value="SUK;HIT">
+        <c:component id="cd-me" />
+    </property>
+    <property id="delayBetweenTwoPings" value="900000">
+        <c:component id="cd-me" />
+    </property>
+    <property id="messageReplyDelay" value="600000">
+        <c:component id="cd-me" />
+    </property>
+    <conf:reference id="JMS_INIFILE" type="ini" componentId="jms">
+        <c:component id="cd-me" />
+        <c:component id="beans" />
+        <c:component id="quoteHandler" />
+        <c:component id="cd-umr" />
+        <c:component id="blazeds" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-cdts" />
+        <c:component id="servlet" />
+        <c:component id="servletmv" />
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+
+    <property id="userOrderManipulationJNDI" value="env/ejb/user/UserOrderManipulation">
+        <c:component id="beans" />
+        <c:component id="cd-oh" />
+        <c:component id="servlet" />
+    </property>
+    <property id="UserOrderManipulationBean_jndi_name" value="env/ejb/user/UserOrderManipulation">
+        <c:component id="beans" />
+    </property>
+    <property id="brokerageInPriceJNDI" value="env/ejb/BrokerageInPriceBeanRemote">
+        <c:component id="beans" />
+        <c:component id="servlet" />
+    </property>
+    <property id="userUtilJNDI" value="env/ejb/user/UserUtil">
+        <c:component id="servlet" />
+        <c:component id="beans" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-pt" />
+    </property>
+    <property id="userOrderObservationJNDI" value="env/ejb/user/UserOrderObservation">
+        <c:component id="beans" />
+        <c:component id="servlet" />
+    </property>
+    <conf:reference id="ABOS_CONNECTION_INIFILE" type="ini" componentId="abos">
+        <c:component id="beans" />
+    </conf:reference>
+
+    <property id="appServerIP" value="localhost">
+        <c:component id="beans" />
+        <c:component id="servlet" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-pt" />
+    </property>
+    <property id="provider_url" value="localhost">
+        <c:component id="beans" />
+    </property>
+    <property id="initial_context_factory" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="beans" />
+    </property>
+    <property id="url_prefix" value="org.jboss.naming:org.jnp.interfaces">
+        <c:component id="beans" />
+    </property>
+    <property id="SpotPositionEntityBean_jndi_name" value="env/ejb/SpotPositionBMPBeanRemote">
+        <c:component id="beans" />
+    </property>
+    <property id="MINIMUM_TICKET_SIZE" value="10000">
+        <c:component id="beans" />
+    </property>
+    <property id="exchangeRateLoadingHour" value="22">
+        <c:component id="beans" />
+    </property>
+    <property id="SuperUserID" value="SU">
+        <c:component id="beans" />
+    </property>
+    <property id="MENewOrderQueueName" value="MENewOrderQueue@router1">
+        <c:component id="beans" />
+    </property>
+    <property id="maxHistoryRequestIntervalInDays" value="31">
+        <c:component id="beans" />
+    </property>
+
+    <property id="MP" value="BPfalse">
+        <c:component id="cme" />
+    </property>
+    <property id="EO" value="ECfalse">
+        <c:component id="cme" />
+    </property>
+    <property id="AU" value="ADfalse">
+        <c:component id="cme" />
+    </property>
+    <property id="SN" value="JYtrue">
+        <c:component id="cme" />
+    </property>
+    <property id="SV" value="CDtrue">
+        <c:component id="cme" />
+    </property>
+    <property id="MF" value="SFtrue">
+        <c:component id="cme" />
+    </property>
+
+    <property id="host" value="224.1.2.10">
+        <c:component id="ipm" />
+    </property>
+    <property id="port" value="7777">
+        <c:component id="ipm" />
+    </property>
+    <property id="bufferLenght" value="4096">
+        <c:component id="ipm" />
+    </property>
+    <property id="hops" value="2">
+        <c:component id="ipm" />
+    </property>
+    <property id="delayBetweenTwoHeartBeats" value="10000">
+        <c:component id="ipm" />
+    </property>
+    <property id="IPM_MESSAGE_LOGGING_ENABLED" value="true">
+        <c:component id="ipm" />
+    </property>
+
+    <property id="DB_URL" value="jdbc:postgresql://192.168.9.221:5432/cdv2_bdm">
+        <c:component id="db" />
+        <c:component id="cd-appserver" />
+    </property>
+    <property id="DB_Username" value="cdv2">
+        <c:component id="db" />
+        <c:component id="cd-appserver" />
+    </property>
+    <property id="DB_Password" value="cdv2">
+        <c:component id="db" />
+        <c:component id="cd-appserver" />
+    </property>
+    <property id="DB_Driver" value="org.postgresql.Driver">
+        <c:component id="db" />
+        <c:component id="cd-appserver" />
+    </property>
+    <property id="MYSQLDB_URL" value="jdbc:mysql://192.168.9.13/test">
+        <c:component id="db" />
+    </property>
+    <property id="MYSQLDB_Username" value="root">
+        <c:component id="db" />
+    </property>
+    <property id="MYSQLDB_Password" value="cdv2">
+        <c:component id="db" />
+    </property>
+
+    <property id="JMS_ServerServiceID" value="ServerSID">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_ServiceQueueName" value="ServiceSTPQueue2@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_MMFailedTradesQueueName" value="MMFailedTrades@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="cdts.jms.providerurl" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="cdts.jms.contextfactory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+        <c:component id="jms" />
+    </property>
+    <property id="cdts.jms.queue.connectionfactory" value="QueueConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="cdts.jms.senderqueue" value="CDTradeSupervisorC2S@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="USERNAME_FOR_EXTERNAL_STP_JMSSERVER" value="admin">
+        <c:component id="jms" />
+    </property>
+    <property id="PASSWORD_FOR_EXTERNAL_STP_JMSSERVER" value="secret">
+        <c:component id="jms" />
+    </property>
+    <property id="ExternalJMS_ProviderURLs" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.provider.url" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.contextfactory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.topic.connectionfactory" value="TopicConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.queue.connectionfactory" value="QueueConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.from.blaze.queue.name" value="jmsfromblazequeue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.to.blaze.topic.name" value="jms2blazetopic">
+        <c:component id="jms" />
+    </property>
+    <property id="jms.to.blaze.timetolive" value="30000">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_AlgoTopicName" value="AlgoTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_NAMINGCONTEXTFACTORY" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_PROVIDERURL" value="jnp://localhost:1099">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_QUEUECONNECTIONFACTORY" value="ConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_QUEUENAME" value="queue/example">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_USERNAME" value="2">
+        <c:component id="jms" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_PASSWORD" value="c7a480139b01114870161721f07a93a3">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_CamForwardTopicName" value="CamForwardTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_CAM_TO_EBS_QUEUE" value="CamToEbsQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_EBS_TO_CAM_QUEUE" value="EbsToCamQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_COMPONENT_TO_CAM_QUEUE" value="EbsToCamQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="OLD_JMS_INIFILE" value="">
+        <c:component id="jms" />
+    </property>
+    <property id="SMQ2xClassPath" value="">
+        <c:component id="jms" />
+    </property>
+    <property id="CDTS_JMS_ServerToClientQueue" value="JMS_ServerToClientQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="CDTS_JMS_ClientToServerQueue" value="JMS_ClientToServerQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="CDTS_JMS_ServerToClientQueueForFailedTrades" value="JMS_ServerToClientQueueForFailedTrades@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="CDTS_JMS_ClientToServerQueueForFailedTrades" value="JMS_ClientToServerQueueForFailedTrades@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="Service_TopicPublisher_Name_Between_ME_CDTS" value="Service_TopicPublisher_Name_Between_ME_CDTS">
+        <c:component id="jms" />
+    </property>
+    <property id="Service_TopicSubscriber_Name_Between_ME_CDTS" value="Service_TopicSubscriber_Name_Between_ME_CDTS">
+        <c:component id="jms" />
+    </property>
+    <property id="RFQRequestsTopicName" value="RFQRequestsTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_UserNewTradeTopic_name" value="UserNewTradeTopic">
+        <c:component id="jms" />
+        <c:component id="cd-umr" />
+    </property>
+    <property id="JMS_TradeBroadcasterTopic_name" value="TradeBroadcastTopic">
+        <c:component id="cd-umr" />
+    </property>
+    <property id="JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="HIT_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="SPH_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="BAR_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="NIK_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="SUK_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="DOC_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="MOP_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="TNT_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="CAM_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="HEL_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="LIQ_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="TBC_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="CME_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="MAC_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="ABC_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="SVS_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="ICE_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="RUM_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="COK_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="MOD_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="POP_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="USER_JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_ContextFactory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_TopicConnectionFactory" value="TopicConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_QueueConnectionFactory" value="QueueConnectionFactory">
+        <c:component id="jms" />
+    </property>
+    <property id="MMAdmindConsoleName" value="MMAdmindConsole1">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_ServiceTopicName" value="ServiceTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_MMNewTradeQueueName" value="MMNewTradeQueue@router1">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_UserNewTradeTopicName" value="UserNewTradeTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_UserOrderManipulationTopicName" value="UserOrderManipulationTopic">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_MENewOrderQueueName" value="MENewOrderQueue">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_TimeToLive" value="0">
+        <c:component id="jms" />
+    </property>
+    <property id="JMSFailure_SleepInterval" value="15000">
+        <c:component id="jms" />
+    </property>
+    <property id="JMS_RFQRequestsTopicName" value="RFQRequestsTopic">
+        <c:component id="jms" />
+    </property>
+
+    <property id="delayBetweenTestCalls" value="1000">
+        <c:component id="brokerage" />
+    </property>
+    <property id="initial_context_factory" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="brokerage" />
+    </property>
+    <property id="initial_cotext_factory" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="brokerage" />
+    </property>
+    <property id="url_prefix" value="org.jboss.naming:org.jnp.interfaces">
+        <c:component id="brokerage" />
+    </property>
+    <property id="provider_url" value="localhost">
+        <c:component id="brokerage" />
+    </property>
+    <property id="bean_jndi_name" value="BrokerageInPriceBean">
+        <c:component id="brokerage" />
+    </property>
+    <property id="BrokerageInPriceEntityBean_jndi_name" value="env/ejb/BrokerageInPriceBeanRemote">
+        <c:component id="brokerage" />
+    </property>
+    <property id="BrokerageInPriceSessionBean_jndi_name" value="env/ejb/BIPSessionBean">
+        <c:component id="brokerage" />
+    </property>
+
+    <property id="sendQuotes" value="true">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="send.limit.email" value="true">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="smtp.server" value="192.168.9.1">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="sender.email.address" value="andras@baxter-it.com">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="receipents.email.address" value="maci@baxter-it.com;andras@baxter-it.com">
+        <c:component id="quoteHandler" />
+    </property>
+
+    <conf:reference id="email.body.file" type="asis">
+        <c:component id="quoteHandler" />
+        <conf:parameter name="file">asis/limitEmailBody.msg</conf:parameter>
+    </conf:reference>
+
+    <property id="QUOTE_EXPIRED_CHECKING_PERIOD" value="300000">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="MIN_ALLOWED_QUANTITY" value="10000">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="MIN_INCREMENT_QUANTITY" value="10000">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="openSessionHourSpot" value="22">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="closeSessionHourSpot" value="22">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="preOpenSessionHourSpot" value="0">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="dailyStartEndHourSpot" value="20">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="fridayStartEndHourSpot" value="22">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="openSessionHourFut" value="20">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="closeSessionHourFut" value="21">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="dailyStartEndHourFut" value="20">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="fridayStartEndHourFut" value="20">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+    </property>
+    <property id="PROCESSEDLAYERS" value="1">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="DELAY_BEFORE_TRADEACK_CONFIRM_TO_ME" value="0">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="maxListSizeForBankPriceUpdateProcessor" value="30">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="maxListSizeForBankPriceUpdateProcessor" value="500">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="maxRFQTTL" value="20">
+        <c:component id="quoteHandler" />
+    </property>
+    <property id="maxRFQTTL" value="30">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="requestRFQ" value="false">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="ForceNonTradeablePrices" value="false">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="MESSAGE_ACK_DELAY" value="5000">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="MAX_MESSAGE_LATENCY" value="2000000000">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="GENERATE_TRADE_ACK_TO_ME" value="true">
+        <!-- TODO very limilar settings for both components. Clarify.-->
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="GENERATESPREAD" value="true">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="GENERATESPOT" value="true">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="USE_GB_HALFTICK" value="true">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="PRICEID_POOLSIZE" value="10">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="RandomizeInterval" value="10">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="cancelOrdersAfterBigLatency" value="false">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="BRIDGE_MAPPING" value="a-b,c-d">
+        <c:component id="quoteHandler" />
+        <c:component id="cd-devel-mmtc" />
+    </property>
+
+
+    <property id="messageBufferMaxListSize" value="100">
+        <c:component id="cd-oh" />
+    </property>
+    <conf:reference id="BROKERAGE_IN_PRICE_INIFILE" type="ini" componentId="brokerage">
+        <c:component id="cd-oh" />
+        <c:component id="cd-mv" />
+        <c:component id="brokerage" />
+        <c:component id="cd-umr" />
+        <c:component id="cd-cdts" />
+        <c:component id="quoteHandler" />
+
+    </conf:reference>
+    <conf:reference id="INIFILE_FOR_QUOTEHANDLER" type="ini" componentId="quoteHandler">
+        <c:component id="cd-oh" />
+    </conf:reference>
+
+    <property id="spotDayOrderValidityHour" value="20">
+        <c:component id="cd-oh" />
+    </property>
+    <property id="futuresDayOrderValidityHour" value="22">
+        <c:component id="cd-oh" />
+    </property>
+    <property id="useExtendedClOrderIdChecking" value="false">
+        <c:component id="cd-oh" />
+    </property>
+    <property id="useMySQLForFixMessages" value="false">
+        <c:component id="cd-oh" />
+    </property>
+
+    <property id="storePendingOrdersIntoFile" value="true">
+        <c:component id="cd-oh" />
+    </property>
+    <property id="storingDirectoryOfPendingOrders" value="/var/local/baxter/cd/OrderHandler">
+        <c:component id="cd-oh" />
+    </property>
+
+    <property id="useSynchronizationForInvokeBeanMethod" value="true">
+        <c:component id="cd-oh" />
+    </property>
+
+    <conf:reference id="ORDERHANDLER_QUICKFIX_INIFILE" type="qfixini">
+        <conf:parameter name="defaults">common</conf:parameter>
+        <conf:parameter name="defaults">OH</conf:parameter>
+        <conf:parameter name="session">OH</conf:parameter>
+        <c:component id="cd-oh" />
+    </conf:reference>
+
+    <conf:reference id="MARKETVIEW_QUICKFIX_INIFILE" type="qfixini">
+        <conf:parameter name="defaults">common</conf:parameter>
+        <conf:parameter name="defaults">MV</conf:parameter>
+        <conf:parameter name="session">MV</conf:parameter>
+        <c:component id="cd-mv" />
+    </conf:reference>
+
+    <property id="maxMessageProcessorNumberThread" value="10">
+        <c:component id="cd-oh" />
+    </property>
+
+    <property id="maxListSizeForMarketView" value="500">
+        <c:component id="cd-mv" />
+    </property>
+
+    <!-- # Send Delete and New PositionEvent in the same message (in repeating 
+		group) -->
+    <property id="SendDeleteAndNewInSameMsg" value="true">
+        <c:component id="cd-mv" />
+    </property>
+
+    <!-- # In the case of topOfBook we send only new messages... -->
+    <property id="SendOnlyNewInCaseOfTopOfBook" value="true">
+        <c:component id="cd-mv" />
+    </property>
+
+    <!-- #delay between two expired price removing (in msec) -->
+    <property id="ExpiredPriceRemoverDelay" value="30000">
+        <c:component id="cd-mv" />
+    </property>
+
+    <!-- #in minute -->
+    <property id="triggerOpenClosePeriod" value="1">
+        <c:component id="cd-mv" />
+    </property>
+
+    <property id="turn.off.back.to.back.deal.generating" value="false">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="DROOLS_USERNAME" value="admin">
+        <c:component id="cd-umr" />
+    </property>
+    <property id="DROOLS_PASSWORD" value="">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="JMX_NOTIFICATION_RESET_HOUR" value="14">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="HEARTBEAT_INTERVAL" value="10000">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="DROOLS_URL" value="http://localhost:8080/drools-guvnor/rest/packages/CD_STP_package/binary">
+        <c:component id="cd-umr" />
+    </property>
+
+    <!-- #in millisec -->
+    <property id="RELOAD_DELAY_FOR_PROPS_FILES" value="10000">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="USER_NAME_FOR_EXTERNAL_TOPIC" value="admin">
+        <c:component id="cd-umr" />
+    </property>
+    <property id="PASSWORD_FOR_EXTERNAL_TOPIC" value="secret">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="SMQ2xClassPath" value="">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="JMS_RECONNECT_DELAY" value="5000">
+        <c:component id="cd-umr" />
+    </property>
+    <property id="DIRECTORY_OF_ARCHIVED_TRADE_FILES" value="/var/log/baxter/cd/UMR/arch">
+        <c:component id="cd-umr" />
+    </property>
+    <property id="DIRECTORY_OF_TRADE_FILES" value="/var/log/baxter/cd/UMR">
+        <c:component id="cd-umr" />
+    </property>
+
+    <!-- FIXME -->
+    <property id="DIRECTORY_OF_PROPERTY_FILES" value="/var/local/baxter/cd/">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="FormatString" value="FILLED;%b;%p;%r;%d;%q;%o;%y;%c;%t;%f">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="DateFormatString" value="yyyy.MM.dd. hh:mm:ss">
+        <c:component id="cd-umr" />
+    </property>
+
+    <property id="comment0" value="#################################">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="comment1" value="####">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="comment2" value="################################">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="comment3" value="#">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="comment4" value="#Tue Feb 12 00:00:00 CET 2008">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="autoBulkingHour" value="11">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="lastSeqNumber" value="0">
+        <c:component id="bulked-trades" />
+    </property>
+    <property id="MaskFor_t" value="mmID,XXXX">
+        <c:component id="bulked-trades" />
+    </property>
+
+    <property id="INITIAL_CONTEXT_FACTORY" value="com.sun.jndi.ldap.LdapCtxFactory">
+        <c:component id="ldap" />
+    </property>
+    <property id="SECURITY_AUTHENTICATION" value="simple">
+        <c:component id="ldap" />
+    </property>
+    <property id="ROOT_PROVIDER_URL" value="ldap://cdbaxter:10389">
+        <c:component id="ldap" />
+    </property>
+
+    <property id="host" value="224.1.2.10">
+        <c:component id="cd-pt" />
+    </property>
+    <property id="port" value="7777">
+        <c:component id="cd-pt" />
+    </property>
+    <property id="bufferLenght" value="4096">
+        <c:component id="cd-pt" />
+    </property>
+    <property id="hops" value="2">
+        <c:component id="cd-pt" />
+    </property>
+    <property id="delayBetweenTwoHeartBeats" value="10000">
+        <c:component id="cd-pt" />
+    </property>
+
+    <property id="server_socket_port" value="5444">
+        <c:component id="cd-pt" />
+    </property>
+
+    <property id="useJBoss" value="true">
+        <c:component id="cd-pt" />
+        <c:component id="servlet" />
+    </property>
+
+    <property id="maxDelayBetweenTwoPriceUpdates" value="5000">
+        <c:component id="cd-pt" />
+    </property>
+
+    <property id="soTimeout" value="1000">
+        <c:component id="cd-pt" />
+    </property>
+    <property id="keepAlive" value="true">
+        <c:component id="cd-pt" />
+    </property>
+
+    <property id="warningLevelForPendingMessages" value="10">
+        <c:component id="cd-pt" />
+    </property>
+
+    <property id="warningLevelForPendingMessages" value="100">
+        <c:component id="cd-mv-cpp" />
+    </property>
+
+    <property id="logThisReutersCode" value="EU">
+        <c:component id="cd-mv-cpp" />
+    </property>
+
+    <property id="serverSocketPort" value="6542">
+        <c:component id="cd-mv-cpp" />
+    </property>
+
+    <property id="11_MMPROXY" value="ABX">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <conf:reference id="11_TradeHistoryDisplay" type="asis">
+        <c:component id="cd-cdts" />
+        <conf:parameter name="file">cdts/11.xml</conf:parameter>
+    </conf:reference>
+
+    <conf:reference id="t2_TradeHistoryDisplay" type="asis">
+        <c:component id="cd-cdts" />
+        <conf:parameter name="file">cdts/t2.xml</conf:parameter>
+    </conf:reference>
+
+    <!-- # Timeout for sending and requesting TI settings to ME in millisec -->
+    <property id="TRADE_INTERCEPTOR_TIMEOUT" value="10000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Trade interception settings -->
+    <property id="11_TI_DISPLAY" value="Extended">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_TI_DISPLAY" value="Hidden">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Config file reload interval in ms -->
+    <property id="INIFILE_RELOAD_INTERVAL" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Users HEARTBEAT settings -->
+    <property id="11_JMS_HEARTBEAT_DELAY" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="11_MAX_HEARTBEAT_TOLERANCE" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="11_HEARTBEAT_MISSEDTHRESHOLD_GREEN" value="0">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="11_HEARTBEAT_MISSEDTHRESHOLD_AMBER" value="1">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="11_HEARTBEAT_MISSEDTHRESHOLD_RED" value="2">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="t2_JMS_HEARTBEAT_DELAY" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_MAX_HEARTBEAT_TOLERANCE" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_HEARTBEAT_MISSEDTHRESHOLD_GREEN" value="0">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_HEARTBEAT_MISSEDTHRESHOLD_AMBER" value="2">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_HEARTBEAT_MISSEDTHRESHOLD_RED" value="3">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="XXXXXXXXXXXX_JMS_HEARTBEAT_DELAY" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_MAX_HEARTBEAT_TOLERANCE" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_HEARTBEAT_MISSEDTHRESHOLD_GREEN" value="0">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_HEARTBEAT_MISSEDTHRESHOLD_AMBER" value="2">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_HEARTBEAT_MISSEDTHRESHOLD_RED" value="3">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="UserID_Mask_For_t3" value="XXX">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="UserID_Mask_For_t2" value="XXX">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="UserID_Mask_For_11" value="X2X">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="GroupUserID_Mask_For_11" value="KAKI">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="GroupUserID_Mask_For_t2" value="KAKI">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="GroupUserID_Mask_For_t3" value="KAKI">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Not whitelabel users are notified via the CDTS when these users trade -->
+    <property id="USERLIST_FOR_FILLED_POPUP" value="11,t3">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- #userSession parameters: -->
+    <property id="11_MAX_JMS_SESSION_STARTUP_DELAY" value="100000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_MAX_JMS_SESSION_STARTUP_DELAY" value="100000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_MAX_JMS_SESSION_STARTUP_DELAY" value="100000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # for users that are not "white label" customers, a failed trade file 
+		has to be made, manually. -->
+    <property id="11_DISTRIBUTOR" value="t2">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_DISTRIBUTOR" value="KAK">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="XXXXXXXXXXXX_DISTRIBUTOR" value="t3">
+        <c:component id="cd-cdts" />
+    </property>
+
+
+    <property id="MAX_ENTRIES_OF_MESSAGEHISTORY" value="100">
+        <c:component id="cd-cdts" />
+    </property>
+    <!--  cdbdmdev? -->
+    <property id="UDP_RECEIVER_ADDRESS" value="localhost">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="UPD_RECEIVER_PORT" value="4455">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="UDP_BUFFER_LENGTH" value="4096">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="UDP_PRICE_RECEIVER_MAX_LIST_SIZE" value="100">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="IS_LOGGING_UDP_MESSAGES" value="false">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # when message is lost and a gapfill request is sent to other end. 
+		Until the response comes back, the incoming other messages # are held up. 
+		The max allowed size of this queue is set here. -->
+    <property id="MAX_SIZE_OF_HOLD_UP_LIST" value="100">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Outgoing messages are first stored in a queue (waiting list). The 
+		max allowed size of this queue is set here. -->
+    <property id="MAX_MESSAGE_SENDER_LIST_SIZE" value="150">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Incoming messages are first stored in a queue (waiting list). The 
+		max allowed size of this queue is set here. -->
+    <property id="MAX_MESSAGE_RECEIVER_LIST_SIZE" value="150">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # Heartbeat messages are sent with this interval -->
+    <property id="JMS_HEARTBEAT_DELAY" value="5000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- # If the roundtrip time for heartbeat messages exceed this time, then 
+		connection is dropped. -->
+    <property id="MAX_HEARTBEAT_TOLERANCE" value="10000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="MAX_LIST_SIZE_OF_PRICE_PROCESSOR" value="500">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="EXPIRED_MMPRICE_CANCELLER_THREAD_DELAY" value="3000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- #acceptableClientVersion=2007.06.25.6. -->
+    <property id="acceptableClientVersion" value="*">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="userGroupIDsForTradeHistory" value="PU,FG,TI,A8,AB_7,AB_9">
+        <c:component id="cd-cdts" />
+    </property>
+    <!-- #userGroupIDsForTradeHistory=A8 -->
+
+
+    <property id="MAX_TRADE_NO_WAITING_TO_BE_PROCESSED" value="50">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="MAX_ORDER_NO_WAITING_TO_BE_PROCESSED" value="50">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="MAXIMUM_TRADE_ID" value="500000000">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="MINIMUM_TICKET_SIZE" value="10000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="CLEARING_IDS" value="BAB,MOD,DOC">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="FAILED_TRADES_CHECKING_DELAY" value="15000">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="User_11_pass" value="ARnQxZ0cG6o=">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="User_r_pass" value="ARnQxZ0cG6o=">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="User_t2_pass" value="ARnQxZ0cG6o=">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="User_XXXXXXXXXXXX_pass" value="ARnQxZ0cG6o=">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="User_a_pass" value="\f\u00c1u\u00b9\u00c0\u00f1\u00b6\u00a81\u00c3\u2122\u00e2iw&amp;a">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <!-- #User_11_childs=t -->
+    <property id="User_t2_childs" value="t2,t3">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="11_FAILED_TRADES_INI" value="/var/local/baxter/cd/11_FailedTrades.ini">
+        <c:component id="cd-cdts" />
+    </property>
+    <property id="t2_FAILED_TRADES_INI" value="/var/local/baxter/cd/t2_FailedTrades.ini">
+        <c:component id="cd-cdts" />
+    </property>
+
+    <property id="superUserID" value="BAX">
+        <c:component id="servlet" />
+    </property>
+
+    <property id="delayBetweenTestCalls" value="5000">
+        <c:component id="servlet" />
+    </property>
+
+    <property id="BlockedRTCodes" value="KU">
+        <c:component id="servletmv" />
+    </property>
+
+    <property id="MARKETVIEW_STORING_DIRECTORY" value="/var/local/baxter/cd/mv/">
+        <c:component id="servletmv" />
+    </property>
+    <property id="CProSocketPort" value="3245">
+        <c:component id="servletmv" />
+    </property>
+    <property id="FlashSocketPort" value="3246">
+        <c:component id="servletmv" />
+    </property>
+    <property id="FILTERCME" value="false">
+        <c:component id="servletmv" />
+    </property>
+    <property id="NumberOfReceivers" value="4">
+        <c:component id="servletmv" />
+    </property>
+    <property id="EndOfDay" value="20">
+        <c:component id="servletmv" />
+    </property>
+
+
+    <property id="MAX_PRICEUPDATE_LIST_SIZE" value="300">
+        <c:component id="httptunneling" />
+    </property>
+    <property id="UDP_SENDER_PORT" value="1637">
+        <c:component id="httptunneling" />
+    </property>
+    <property id="MAX_DELAY_BETWEEN_TWO_HEARTBEATS" value="20000">
+        <c:component id="httptunneling" />
+    </property>
+
+    <property id="smtp.server" value="192.168.9.1">
+        <c:component id="blazeds" />
+    </property>
+    <property id="email.from" value="peter@baxter-it.com">
+        <c:component id="blazeds" />
+    </property>
+    <property id="email.to" value="peter@baxter-it.com">
+        <c:component id="blazeds" />
+    </property>
+    <property id="email.subject" value="emailSubjecttttt">
+        <c:component id="blazeds" />
+    </property>
+    <property id="delayBetweenTestCalls" value="5000">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Message resend buffer size for RTC communication # # value is number 
+		of messages -->
+    <property id="max.entries.in.message.history" value="100">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Heartbeat message is sent to RTC with this interval # # value is 
+		specified in milliseconds -->
+    <property id="jms.heartbeat.delay" value="5000">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # RTC that send back heartbeat within this time is considered to be 
+		alive # # value is specified in milliseconds -->
+    <property id="heartbeat.timeout" value="15000">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Cached RTC logins are checked with this interval. # If they are not 
+		sending heartbeats then they are removed from memory. # # value is specified 
+		in milliseconds -->
+    <property id="heartbeat.checking.interval" value="15000">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # JGroups channel name for sharing chart data between BlazeDS instances -->
+    <property id="chart.channel" value="chartChannel">
+        <c:component id="blazeds" />
+    </property>
+    <!--# JGroups channel name for sharing logged-in-users data between BlazeDS 
+		instances -->
+    <property id="loggedin.users.channel" value="loggedInUsersChannel">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Superuser ID for RTC login -->
+    <property id="super.user" value="14">
+        <c:component id="blazeds" />
+    </property>
+    <conf:reference id="abos.iniFile" type="ini" componentId="abos">
+        <c:component id="blazeds" />
+    </conf:reference>
+    <!-- # Safety check for removing old MM prices. Cancel check is done with 
+		this interval. # # value is specified in milliseconds -->
+    <property id="expiredPriceRemoverDelay" value="60000">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Market daily high-low data is stored in this directory -->
+    <property id="marketview_storing_directory" value="/var/local/baxter/cd/BlazeMV">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # Market daily high-low is reset at this hour -->
+    <property id="end_of_day_hour" value="20">
+        <c:component id="blazeds" />
+    </property>
+    <!-- # BlazeDS <destination id> specified in .../BlazeDS/tomcat/webapps/blazeds/WEB-INF/flex/messaging-config.xml 
+		file. -->
+    <property id="blaze.destination.id" value="feed">
+        <c:component id="blazeds" />
+    </property>
+
+    <property id="DB_ConnectionLimit" value="1">
+        <c:component id="cd-evoc" />
+    </property>
+
+    <property id="supervisedUserGroups" value="7,9">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="MAX_LIST_SIZE_FOR_ABOS_MESSAGE_PROCESSOR" value="200">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="MAX_LIST_SIZE_FOR_BLAZEDS_MESSAGE_PROCESSOR" value="200">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="REFRESH_PERIOD_FOR_EXCHANGE_RATE" value="60000">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="provider_url" value="localhost">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="initial_context_factory" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="url_prefix" value="org.jboss.naming:org.jnp.interfaces">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="UserLookup_jndi_name" value="java:/UserLookup/remote">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_ContextFactory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_QueueConnectionFactory" value="QueueConnectionFactory">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_TopicConnectionFactory" value="TopicConnectionFactory">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_TO_BLAZE_TOPIC_NAME" value="jms2blazetopic">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_FROM_BLAZE_QUEUE_NAME" value="jmsfromblazequeue@router1">
+        <c:component id="cd-aml" />
+    </property>
+    <property id="JMS_TimeToLive" value="30000">
+        <c:component id="cd-aml" />
+    </property>
+    <conf:reference id="ABOS_INIFILE" type="ini" componentId="abos">
+        <c:component id="cd-aml" />
+    </conf:reference>
+
+    <property id="USERNAME" value="2">
+        <c:component id="abos" />
+    </property>
+    <property id="PASSWORD" value="c7a480139b01114870161721f07a93a3">
+        <c:component id="abos" />
+    </property>
+    <property id="HOST_PORT" value="abosbdm:8080">
+        <c:component id="abos" />
+    </property>
+    <property id="HOST" value="abosbdm:1099">
+        <c:component id="abos" />
+    </property>
+    <property id="JNDI_LOOKUP" value="ConnectionFactory">
+        <c:component id="abos" />
+    </property>
+    <property id="INITIAL_CONTEXT" value="org.jnp.interfaces.NamingContextFactory">
+        <c:component id="abos" />
+    </property>
+    <property id="RMI_CONNECTION" value="abosbdm:8080">
+        <c:component id="abos" />
+    </property>
+    <property id="USERNAME" value="2">
+        <c:component id="abos" />
+    </property>
+    <property id="PASSWORD" value="c7a480139b01114870161721f07a93a3">
+        <c:component id="abos" />
+    </property>
+
+    <property id="storeMMPricesInDB" value="false">
+        <c:component id="cd-cg" />
+    </property>
+    <property id="chartChannel" value="chartChannel">
+        <c:component id="cd-cg" />
+    </property>
+    <property id="tableMaxRows" value="500">
+        <c:component id="cd-cg" />
+    </property>
+    <property id="maxTimestampDifference" value="5000">
+        <c:component id="cd-cg" />
+    </property>
+    <property id="rtCodes" value="EU">
+        <c:component id="cd-cg" />
+    </property>
+
+
+    <property id="portForLogChannel" value="1234">
+        <c:component id="cd-lms" />
+    </property>
+    <property id="portForMonitorChannel" value="2345">
+        <c:component id="cd-lms" />
+    </property>
+    <property id="GROUP_id" value="5000,loszar,15000">
+        <c:component id="cd-lms" />
+    </property>
+    <property id="versionFile" value="/var/local/baxter/cd/classVersions.txt">
+        <c:component id="cd-lms" />
+    </property>
+
+    <property id="sendQuotes" value="false">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="PRICEID_POOLSIZE" value="100">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="BRIDGE_MAPPING" value="">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="GENERATESPREAD" value="false">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="GENERATESPOT" value="true">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="ForceNonTradeablePrices" value="false">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="requestRFQ" value="true">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="maxRFQTTL" value="100000">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="GENERATE_TRADE_ACK_TO_ME" value="true">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="USE_GB_HALFTICK" value="true">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="cancelOrdersAfterBigLatency" value="true">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="PROCESSEDLAYERS" value="1">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="MAX_MESSAGE_LATENCY" value="100000">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="MESSAGE_ACK_DELAY" value="1">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="MESSAGE_ACK_DELAY" value="1">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="DELAY_BEFORE_TRADEACK_CONFIRM_TO_ME" value="1">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="RandomizeInterval" value="50000">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+        <c:component id="cd-mm-doc" />
+    </property>
+    <property id="maxListSizeForBankPriceUpdateProcessor" value="100">
+        <c:component id="cd-mm-tbc" />
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-cok" />
+        <c:component id="cd-mac" />
+    </property>
+
+    <property id="username" value="tradingclient">
+        <c:component id="cd-mm-tbc" />
+    </property>
+    <property id="password" value="clientpwd">
+        <c:component id="cd-mm-tbc" />
+    </property>
+    <property id="BlockedRTCodes"
+        value="AD,AS,AK,BP,BR,CD,CS,CZ,DN,DS,EC,EH,EK,EL,EN,EO,ES,EZ,GK,GN,GS,GY,HR,IL,IN,JY,KD,KG,KW,KX,MF,MP,NJ,NT,PC,PK,PL,PS,PZ,QA,RO,RT,RU,SF,SN,SV,TW,UD,UF,UZ,YT,ZJ,ZZ,XG,XU">
+        <c:component id="cd-mm-tbc" />
+    </property>
+    <conf:reference id="api.property.file" type="ini" componentId="cd-tbc-cp">
+        <c:component id="cd-mm-tbc" />
+    </conf:reference>
+
+    <!-- # The host the client will connect to
+	-->
+    <property id="host" value="82.136.23.154">
+        <c:component id="cd-tbc-cp" />
+    </property>
+    <!-- # The IP port number that the client will connect on -->
+    <property id="port" value="35555">
+        <c:component id="cd-tbc-cp" />
+    </property>
+    <!-- # Should the client initiate a connection to the server or accept connections from the client -->
+    <property id="initiate.connection" value="false">
+        <c:component id="cd-tbc-cp" />
+    </property>
+    <!-- # How long before the connection is considered idle and heartbeating starts (milliseconds)
+	 -->
+    <property id="heartbeat.idle.time" value="1250">
+        <c:component id="cd-tbc-cp" />
+    </property>
+    <!-- # Defines the time a Heartbeat Response is expected to be received in (milliseconds)
+	 -->
+    <property id="heartbeat.response.timeout" value="1200">
+        <c:component id="cd-tbc-cp" />
+    </property>
+    <!-- # Defines the number of lost heartbeats before the transport is failed.
+	 -->
+    <property id="heartbeat.failure.limit" value="1">
+        <c:component id="cd-tbc-cp" />
+    </property>
+
+    <property id="TradeAck_SleepInterval" value="5000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="OnBehalfOfCompID_QUOTES" value="quotes2">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="OnBehalfOfCompID_ORDERS" value="BAXTERSMALL">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="Replace_onBehalf_with_account_for_orders" value="false">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="MessageStorePath" value="/var/local/baxter/cd/RUM/RUMMessageStore.txt">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <conf:reference id="FIXSessionClientIni" type="ini" componentId="rum-fix">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </conf:reference>
+    <property id="SIX_LETTER_CODES"
+        value="AUDJPY;AUDNZD;AUDUSD;CADJPY;CHFJPY;EURCHF;EURCZK;EURDKK;EURGBP;EURHUF;EURJPY;EURNOK;EURPLN;EURSEK;EURTRY;EURUSD;GBPCHF;GBPJPY;GBPUSD;NZDJPY;NZDUSD;USDCAD;USDCHF;USDHKD;USDJPY;USDMXN;USDNOK;USDSEK;USDSGD;USDZAR">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY" value="2000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_EURCZK" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_EURHUF" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_EURPLN" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_EURHKD" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_USDMXN" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_USDSGD" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="REQUESTED_SPOT_QUANTITY_USDZAR" value="1000000">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="GENERATECME" value="false">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+    <property id="SpotQuotesOnly" value="true">
+        <c:component id="cd-mm-rum" />
+        <c:component id="cd-cok" />
+    </property>
+
+    <property id="requestRFDS" value="true">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="requestRFDS" value="true">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="OrderTimeToLive" value="150000">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="CHECK_ACCOUNT_INFO" value="true">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="REUTERS_CODES"
+        value="YD;EU;YP;GB;YY;AS;AZ;AK;YA;AR;AG;AU;HY;ZY;CN;ZZ;DN;DE;RA;EP;RZ;EZ;RD;EH;HR;EJ;OL;RN;EL;RK;SA;GC;SS;SY;GN;SK;GS;GZ;NJ;KD;KJ;KG;ZX;GY;YF;UZ;YK;HK;UF;MX;NS;PL;KU;SG;ZR;SP;DT;ZK;GD">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+    <property id="d2bproperties" value="/var/local/baxter/cd/DOC/dm-client.properties">
+        <c:component id="cd-mm-doc" />
+        <c:component id="cd-mac" />
+    </property>
+
+    <property id="qfixComponentId" value="HIT">
+        <c:component id="cd-oh" />
+    </property>
+
+
+    <property id="ResetOnLogon" value="true">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="SeqNoStorePath" value="/var/local/baxter/cd/RUM/RUMFIXPriceSeqNo.ini">
+        <c:component id="rum-fix" />
+    </property>
+
+    <property id="SENDER_BUFFERFULL_ALARM_DELAY" value="1000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <property id="userName" value="BFTEST">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="password" value="LEH_TEST">
+        <c:component id="rum-fix" />
+    </property>
+
+    <property id="SenderCompID" value="BAXTERFX_TEST">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="SenderLocationID" value="">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="SenderSubID" value="baxterq1">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="TargetCompID" value="NOMURAFX_TEST">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="TargetPort" value="25500">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="TargetIP" value="85.119.26.7">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="DeliverToCompID" value="">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="DeliverToSubID" value="">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="DeliverToLocationID" value="">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="OnBehalfOfCompID" value="quotes1">
+        <c:component id="rum-fix" />
+    </property>
+    <property id="warmUpDelayBeforeSendingLogon" value="4000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <property id="FIX_VERSION" value="FIX.4.4">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum length of processable FIX message. -->
+    <property id="MAXIMUM_LENGTH_OF_MESSAGE" value="1000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Size of already sent messages cache. Needed for resending messages. -->
+    <property id="SIZE_OF_SENT_MSG_CACHE" value="100">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum number of session messages in the sender. Exceeding this value will shut down the session. -->
+    <property id="SIZE_OF_SESSION_MSG_CONTAINER" value="100">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum number of application messages in the sender. Exceeding this value will shut down the session. -->
+    <property id="SIZE_OF_APP_MSG_CONTAINER" value="100">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum difference between the sender's sending time in FIX msg and the current time, in milliseconds. -->
+    <property id="SENDING_TIME_MAX_DELAY" value="15000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum waiting time for a forced heartbeat with the proper ID in milliseconds. -->
+    <property id="TESTREQUEST_RESPONSE_TIMEOUT" value="10000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum waiting time for a initiating logon or a logon reply or a sequence reset logon reply in milliseconds. -->
+    <property id="LOGON_REPLY_WAITING_TIMEOUT" value="15000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- Maximum waiting time for a logout sent back from the counterparty -->
+    <property id="LOGOUT_REPLY_WAITING_TIMEOUT" value="15000">
+        <c:component id="rum-fix" />
+    </property>
+
+    <!-- If the client has not sent any message for this period then sends a heartbeat (in sec) -->
+    <property id="HEARTBEAT_INTERVAL" value="15">
+        <c:component id="rum-fix" />
+    </property>
+
+    <property id="DELAY_BEFORE_SHUTDOWN_TRADING_SESSION_CLOSE" value="12000">
+        <c:component id="rum-fix" />
+    </property>
+
+
+    <property id="REPUBLISH_THREAD_CHECKING_PERIOD_TIME" value="10000">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="M4_Hearbeat_Interval" value="50000">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="M4_Hearbeat_SYMBOL" value="XXXXXX">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="MMTC_Heartbeat_Interval" value="20000">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="M4RECEIVER_RECONNECT_INTERVAL" value="100000">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="AUTHENTICATION_PAIRS" value="UserNameXX:PasswordX,t:t">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="M4_SERVERS" value="">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="DEFAULT_TTL_FOR_OUTBOUND_PRIECES" value="60000">
+        <c:component id="cd-devel-mmtc" />
+    </property>
+    <property id="sendQuotes" value="false">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DEFAULT_QUANTITY" value="10000000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DEFAULT_SPOT_QUANTITY" value="10000000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DEFAULT_TRADABLE" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DEFAULT_SPOT_TRADABLE" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DEFAULT_TIMETOLIVE" value="100000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="GENERATE_RANDOM_NON_TRADABLE_PRICE" value="false">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="randomize" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="mmIds" value="SUK">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_Delay" value="3000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_RtCodes" value="EU;YY">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_NumberOfCancelledPrices" value="0">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_ImmDates" value="SPOT">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_NumberOfLayers" value="4">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_allorNone" value="false">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_DEFAULT_BASESPOT" value="1">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_DEFAULT_BASEFORWARD" value="1">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_SecurityExchange" value="CD">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_SecurityType" value="OTC">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_ProductComplex" value="FX">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="SUK_BridgeMMID" value="HIT">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="PRICEID_POOLSIZE" value="100">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="logDetails" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="BRIDGE_MAPPING" value="">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="GENERATESPREAD" value="false">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="GENERATESPOT" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="ForceNonTradeablePrices" value="false">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="requestRFQ" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="maxRFQTTL" value="100000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="GENERATE_TRADE_ACK_TO_ME" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="USE_GB_HALFTICK" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="cancelOrdersAfterBigLatency" value="true">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="PROCESSEDLAYERS" value="1">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="MAX_MESSAGE_LATENCY" value="100000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="DELAY_BEFORE_TRADEACK_CONFIRM_TO_ME" value="1">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="RandomizeInterval" value="50000">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <property id="maxListSizeForBankPriceUpdateProcessor" value="100">
+        <c:component id="cd-devel-stpg" />
+    </property>
+    <conf:reference id="CME_INIFILE" type="ini" componentId="cme">
+        <c:component id="cd-devel-stpg" />
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+    <conf:reference id="JMS_INIFILE" type="ini" componentId="jms">
+        <c:component id="cd-devel-stpg" />
+    </conf:reference>
+    <conf:reference id="DB_INIFILE" type="ini" componentId="db">
+        <c:component id="cd-devel-stpg" />
+    </conf:reference>
+
+    <property id="appServerIP" value="localhost">
+        <c:component id="cpro" />
+    </property>
+    <property id="userUtilJNDI" value="env/ejb/user/UserUtil">
+        <c:component id="cpro" />
+    </property>
+    <property id="chartChannel" value="chartChannel">
+        <c:component id="cpro" />
+    </property>
+
+    <conf:reference id="CD_PRICE_READER_QUICKFIX_INIFILE" type="qfixini">
+        <conf:parameter name="defaults">MMTC</conf:parameter>
+        <conf:parameter name="defaults">MMTC_CD</conf:parameter>
+        <conf:parameter name="session">MMTC_CD</conf:parameter>
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+    
+    <conf:reference id="LAVA_PRICE_READER_QUICKFIX_INIFILE" type="qfixini">
+        <conf:parameter name="defaults">MMTC</conf:parameter>
+        <conf:parameter name="defaults">MMTC_LAVA</conf:parameter>
+        <conf:parameter name="session">MMTC_LAVA</conf:parameter>
+        <c:component id="cd-devel-mmtc" />
+    </conf:reference>
+
+	<property id="clientAppId" value="com.baxter.cd.web.air">
+		<c:component id="cd-air" />
+	</property>
+	<property id="clientAppVersion" value="2013.05.09.">
+		<c:component id="cd-air" />
+	</property>
+    <conf:reference id="updaterurl" type="asis">
+        <conf:parameter name="file">asis/cd-interface-update.xml</conf:parameter>
+		<c:component id="cd-air" />
+    </conf:reference>
+    <conf:reference id="clientAppUrl" type="asis">
+        <conf:parameter name="file">asis/cd-interface.air</conf:parameter>
+        <conf:parameter name="alias">cd-interface.air</conf:parameter>
+		<c:component id="cd-air" />
+    </conf:reference>
+	<property id="clientAppName" value="CD.Net BUILD">
+		<c:component id="cd-air" />
+	</property>
+	<property id="serverurl"
+		value="http://192.168.9.104:8400/axis2/services/TraderdeckService">
+		<c:component id="cd-air" />
+	</property>
+	<property id="tunnelingip" value="192.168.9.104">
+		<c:component id="cd-air" />
+	</property>
+	<property id="tunnelingpath" value="/cdv17/servlet/air">
+		<c:component id="cd-air" />
+	</property>
+	<property id="tunnelingport" value="8400">
+		<c:component id="cd-air" />
+	</property>
+	<property id="udpip" value="192.168.9.226">
+		<c:component id="cd-air" />
+	</property>
+	<property id="udpport" value="1637">
+		<c:component id="cd-air" />
+	</property>
+	<property id="timeout" value="30000">
+		<c:component id="cd-air" />
+	</property>
+	<property id="timetolive_info" value="5000">
+		<c:component id="cd-air" />
+	</property>
+	<property id="timetolive_error" value="5000">
+		<c:component id="cd-air" />
+	</property>
+	<property id="filelogenabled" value="true">
+		<c:component id="cd-air" />
+	</property>
+
+	<property id="algoLocations" value="AlgoSamples">
+		<c:component id="cd-algo" />
+	</property>
+    <conf:reference id="AlgoSamples" type="asis">
+        <conf:parameter name="file">algo%2falgo-samples.jar</conf:parameter>
+        <conf:parameter name="alias">samples.jar</conf:parameter>
+        <c:component id="cd-algo" />
+    </conf:reference>
+    
+    <property id="qfixComponentId" value="HIT">
+    	<c:component id="cd-oh" />
+    </property>
+
+</configuration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/jvm"
+    xmlns:c="http://baxter-it.com/config/component" xmlns:conf="http://baxter-it.com/config">
+
+    <debug id="stp-debugger" suspend="false">
+        <c:component id="cd-stp">
+            <port>8993</port>
+        </c:component>
+    </debug>
+    
+</configuration>

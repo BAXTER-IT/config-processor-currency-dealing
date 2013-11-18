@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+	xmlns="http://baxter-it.com/currency-dealing/conf/generic-properties"
+	xmlns:c="http://baxter-it.com/config/component" xmlns:conf="http://baxter-it.com/config">
+
+	<property id="message.inputter.class"
+		value="com.baxter.cdv2.standalone.user.CDJMSMessageInputterWithACK">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="message.handler.class"
+		value="com.baxter.cdv2.standalone.user.SimpleMessageHandler">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="message.formatter.class"
+		value="com.baxter.cdv2.standalone.user.TemplateMessageFormatter">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="message.outputter.class"
+		value="com.baxter.cdv2.standalone.user.JBossMQMessageOutputter">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.initial.context.factory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.provider.url" value="smqp://localhost:4455/timeout=10000">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.username" value="admin">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.password" value="secret">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.topic.connection.factory" value="TopicConnectionFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.queue.connection.factory" value="QueueConnectionFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.topic.name" value="testTopic2">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.serviceid" value="client1">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.service.queue.name" value="ServiceSTPQueue2@router1">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.timetolive" value="9000">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="receiving.mode" value="Push">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jms.message.reply.timeout" value="20000">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="ldap.password" value="secret">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="ldap.principal" value="uid=admin,ou=system">
+		<c:component id="cd-stp" />
+	</property>
+	<conf:reference id="template.config.file" type="asis">
+		<c:component id="cd-stp" />
+		<conf:parameter name="file">asis/CD_ABOS.cfg</conf:parameter>
+	</conf:reference>
+	<property id="output.folder" value="../output">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="output.file.name.format" value="trade_{tradeid}.out">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.context.factory" value="org.jnp.interfaces.NamingContextFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.provider.url" value="jnp://abosbdm:1100">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.queue.connection.factory"
+		value="ConnectionFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.queue.name" value="queue/DefaultTradeReceiver">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.username" value="2">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="jbossmq.tradesender.password" value="c7a480139b01114870161721f07a93a3">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="counterParty" value="7">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="IsMMreceiver" value="false">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JBOSSMQ_TRADESENDER_NAMINGCONTEXTFACTORY" value="org.jnp.interfaces.NamingContextFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JBOSSMQ_TRADESENDER_PROVIDERURL" value="jnp://abosbdm:1100">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JBOSSMQ_TRADESENDER_QUEUECONNECTIONFACTORY"
+		value="ConnectionFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JBOSSMQ_TRADESENDER_QUEUENAME" value="queue/DefaultTradeReceiver">
+		<c:component id="cd-stp" />
+	</property>
+    <property id="JBOSSMQ_TRADESENDER_USERNAME" value="2">
+		<c:component id="cd-stp" />
+    </property>
+    <property id="JBOSSMQ_TRADESENDER_PASSWORD" value="c7a480139b01114870161721f07a93a3">
+		<c:component id="cd-stp" />
+    </property>
+	<property id="JMS_TradeBroadcasterTopic_name" value="testTopic2">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMS_ProviderURL" value="smqp://localhost:4455/timeout=10000">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMS_ContextFactory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMS_TopicConnectionFactory" value="TopicConnectionFactory">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMS_UserName" value="admin">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMS_Password" value="secret">
+		<c:component id="cd-stp" />
+	</property>
+	<property id="JMSSubscriberName" value="GRU">
+		<c:component id="cd-stp" />
+	</property>
+
+</configuration>

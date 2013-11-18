@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/log"
+    xmlns:c="http://baxter-it.com/config/component">
+
+    <rolling-file-appender id="FILE_STP" name="FILE_STP" file="cd-stp-ato.log" maxSize="100MB"
+        backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+        <c:component id="cd-stp"/>
+    </rolling-file-appender>
+    
+</configuration>

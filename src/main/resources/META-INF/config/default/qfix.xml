@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/qfix/conf" xmlns:conf="http://baxter-it.com/config">
+
+    <defaults id="common">
+
+        <default id="BeginString">*</default>
+        <default id="SenderCompID">BAXTER</default>
+        <default id="SenderSubID">*</default>
+        <default id="TargetCompID">*</default>
+        <default id="TargetSubID">*</default>
+
+        <default id="MillisecondsInTimeStamp">true</default>
+
+        <default id="DefaultApplVerID">FIX.5.0</default>
+
+        <default id="FileLogHeartbeats">true</default>
+        <default id="ScreenLogEvents">false</default>
+        <default id="ScreenLogShowIncoming">false</default>
+        <default id="ScreenLogShowOutgoing">false</default>
+        <default id="RefreshOnLogon">false</default>
+        <default id="SocketTcpNoDelay">true</default>
+
+    </defaults>
+
+    <defaults id="OH">
+        <connection-ref id="connOH" />
+        <time-ref id="sun_sat_0000_2359" />
+        <default id="SendResetSeqNumFlag">false</default>
+        <default id="FileStoreMaxCachedMsgs">100000</default>
+        <!-- This path is created by quickfixj code if does not exist -->
+        <default id="FileStorePath">/var/local/baxter/cd/QFIXOHStore</default>
+        <conf:reference id="AppDataDictionary.FIX.4.2" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/OH/FIX42.xml</conf:parameter>
+        </conf:reference>
+        <conf:reference id="AppDataDictionary.FIX.4.4" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/OH/FIX44.xml</conf:parameter>
+        </conf:reference>
+        <conf:reference id="AppDataDictionary.FIX.5.0" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/OH/FIX50.xml</conf:parameter>
+        </conf:reference>
+        <conf:reference id="TransportDataDictionary" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/OH/FIXT11.xml</conf:parameter>
+        </conf:reference>
+    </defaults>
+
+    <defaults id="MV">
+        <connection-ref id="connMV" />
+        <time-ref id="sun_sat_0000_2359" />
+        <conf:reference id="AppDataDictionary.FIX.5.0" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/MV/FIX50.xml</conf:parameter>
+        </conf:reference>
+        <conf:reference id="TransportDataDictionary" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/MV/FIXT11.xml</conf:parameter>
+        </conf:reference>
+        <!-- This path is created by quickfixj code if does not exist -->
+        <default id="FileStorePath">/var/local/baxter/cd/QFIXMVStore</default>
+    </defaults>
+
+    <defaults id="raboCommon">
+        <default id="BeginString">FIX.4.4</default>
+        <default id="MillisecondsInTimeStamp">true</default>
+        <default id="RefreshMessageStoreAtLogon">true</default>
+        <default id="SendResetSeqNumFlag">true</default>
+    </defaults>
+
+    <defaults id="rabo">
+        <connection-ref id="rabo" />
+        <default id="SenderCompID">BAXTER</default>
+        <default id="TargetCompID">Rabobank</default>
+    </defaults>
+
+    <defaults id="raboInitiator">
+        <connection-ref id="raboInit" />
+        <default id="TargetCompID">BAXTER</default>
+        <default id="SenderCompID">Rabobank</default>
+    </defaults>
+
+    <defaults id="MMTC">
+        <default id="SendResetSeqNumFlag">true</default>
+        <default id="RefreshMessageStoreAtLogon">false</default>
+        <default id="SocketTcpNoDelay">true</default>
+        <default id="SocketKeepAlive">true</default>
+        <default id="MillisecondsInTimeStamp">true</default>
+        <default id="FileIncludeMilliseconds">true</default>
+        <default id="FileIncludeTimeStampForMessages">true</default>
+        <default id="ValidateFieldsOutOfOrder">false</default>
+        <default id="PersistMessages">true</default>
+        <!-- STORAGE -->
+        <default id="FileStoreMaxCachedMsgs">1000</default>
+        <default id="FileLogHeartbeats">true</default>
+    </defaults>
+
+    <defaults id="MMTC_LAVA">
+        <connection-ref id="connMMTCLava" />
+        <default id="SenderCompID">BAXTER</default>
+        <default id="TargetCompID">LAVA</default>
+        <default id="Username">BAXTER_USER</default>
+        <default id="Password">baxter_test</default>
+        <default id="BeginString">FIX.4.3</default>
+        <default id="ResetOnDisconnect">false</default>
+        <!-- STORAGE -->
+        <default id="FileStorePath">/var/local/baxter/cd/devel-mmtc/LAVA</default>
+        <default id="FileLogPath">/var/local/baxter/cd/devel-mmtc/LAVA</default>
+    </defaults>
+    
+    <defaults id="MMTC_CD">
+        <connection-ref id="connMMTCCD" />
+        <default id="SenderCompID">SMV5</default>
+        <default id="SenderSubID">FIX</default>
+        <default id="PASSWORD">RJtestcd</default>
+        <default id="BeginString">FIXT.1.1</default>
+        <default id="DefaultApplVerID">FIX.5.0</default>
+        <default id="TargetCompID">BAXTER</default>
+        <default id="ResetOnDisconnect">true</default>
+        <!-- STORAGE -->
+        <default id="FileStorePath">/var/local/baxter/cd/devel-mmtc/CD</default>
+    </defaults>
+    
+    <time id="sun_sat_0000_2359" start="00:00:00" end="23:59:00" startDay="SUNDAY" endDay="SATURDAY" />
+
+    <connection id="connMMTCLava" host="localhost" port="9999" type="initiator" reconnectInterval="60" />
+
+    <connection id="connMMTCCD" host="82.136.23.156" port="4968" type="initiator" reconnectInterval="60" />
+    
+    <connection id="connMV" host="localhost" port="6668" type="acceptor" resetOnLogon="true" reconnectInterval="60" />
+
+    <connection id="connOH" host="localhost" port="6667" type="acceptor" resetOnLogon="false" reconnectInterval="60" />
+
+    <connection id="rabo" host="localhost" port="64001" type="acceptor" resetOnLogon="true" reconnectInterval="60" />
+    <connection id="raboInit" host="localhost" port="64001" type="initiator" resetOnLogon="true" reconnectInterval="60" />
+
+    <session id="MMTC_LAVA" time="sun_sat_0000_2359" heartbeatInterval="30">
+        <conf:reference id="DataDictionary" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/mmtc/LavaFix43.xml</conf:parameter>
+        </conf:reference>
+    </session>
+
+    <session id="MMTC_CD" time="sun_sat_0000_2359" heartbeatInterval="30">
+        <conf:reference id="AppDataDictionary.FIX.5.0" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/mmtc/FIX50_MV.xml</conf:parameter>
+        </conf:reference>
+        <conf:reference id="TransportDataDictionary" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/mmtc/FIXT11_MV.xml</conf:parameter>
+        </conf:reference>
+    </session>
+    
+    <session id="OH" persistMessages="true" heartbeatInterval="10">
+        <option id="AcceptorTemplate">true</option>
+    </session>
+
+    <session id="MV" persistMessages="false" heartbeatInterval="10">
+        <option id="AcceptorTemplate">true</option>
+    </session>
+
+    <session id="rabo" time="sun_sat_0000_2359" heartbeatInterval="10">
+        <conf:reference id="DataDictionary" type="asis">
+            <conf:parameter name="file">qfixDataDictionary/rabo/FIX44.xml</conf:parameter>
+        </conf:reference>
+    </session>
+    
+	 <session id="raboInitiator" time="sun_sat_0000_2359"
+		heartbeatInterval="10">
+		<conf:reference id="DataDictionary" type="asis">
+			<conf:parameter name="file">qfixDataDictionary/rabo/FIX44.xml</conf:parameter>
+		</conf:reference>
+		<option id="FileStorePath">./target/qfixj-jbehave</option>
+	</session>
+
+</configuration>

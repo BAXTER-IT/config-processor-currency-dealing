@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/jvm" xmlns:c="http://baxter-it.com/config/component"
+    xmlns:conf="http://baxter-it.com/config">
+
+    <logging id="default">
+        <c:component id="cd-devel-stpg" />
+        <c:component id="cd-devel-mmtc" />
+    </logging>
+
+    <option id="gc1" value="-XX:+PrintGCDetails">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <option id="gc5" value="-XX:+PrintGCTimeStamps">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <option id="gc6" value="-XX:+PrintGCDateStamps">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <debug id="nowait" suspend="false">
+        <c:component id="cd-ejb">
+            <port>8787</port>
+        </c:component>
+        <c:component id="cd-web">
+            <port>8788</port>
+        </c:component>
+        <c:component id="cd-me">
+            <port>8790</port>
+        </c:component>
+        <c:component id="cd-mv">
+            <port>8791</port>
+        </c:component>
+        <c:component id="cd-oh">
+            <port>8792</port>
+        </c:component>
+
+    </debug>
+
+    <jmx id="unsecure">
+        <c:component id="cd-devel-stpg">
+            <port>18105</port>
+        </c:component>
+    </jmx>
+
+    <system id="messagingType">
+        <c:component id="cd-devel-stpg" />
+        <c:component id="cd-devel-mmtc" />
+    </system>
+
+    <system id="mmtcMMID" name="MMID" value="SUK">
+        <c:component id="cd-devel-mmtc"/>
+    </system>
+    
+</configuration>

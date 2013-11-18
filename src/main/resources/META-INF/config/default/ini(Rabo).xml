@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/currency-dealing/conf/generic-properties"
+    xmlns:c="http://baxter-it.com/config/component" xmlns:conf="http://baxter-it.com/config">
+
+    <!-- #message.inputter.class=com.baxter.cdv2.standalone.user.CDJMSMessageInputterWithACK -->
+    <property id="message.inputter.class" value="com.baxter.cdv2.standalone.user.NoMessageInputter">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="message.handler.class"
+        value="com.baxter.cdv2.standalone.user.SimpleMessageHandler">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="message.formatter.class"
+        value="com.baxter.cdv2.standalone.user.SimpleMessageFormatter">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="message.outputter.class"
+        value="com.baxter.cdv2.standalone.user.RaboBankMessageOutputter">
+        <c:component id="cd-stp"/>
+    </property>
+    
+    <property id="camel.mode" value="true">
+        <c:component id="cd-stp"/>
+    </property>
+    
+    <conf:reference id="camel.acceptor" type="qfixini">
+        <conf:parameter name="defaults">rabo</conf:parameter>
+        <conf:parameter name="defaults">raboCommon</conf:parameter>
+        <conf:parameter name="session">rabo</conf:parameter>
+        <c:component id="cd-stp"/>
+    </conf:reference>
+    
+    <property id="jms.initial.context.factory" value="com.swiftmq.jndi.InitialContextFactoryImpl">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.provider.url" value="smqp://localhost:4455/timeout=10000">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.username" value="admin">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.password" value="secret">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.topic.connection.factory" value="TopicConnectionFactory">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.queue.connection.factory" value="QueueConnectionFactory">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.topic.name" value="testTopic3">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.serviceid" value="client2">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.service.queue.name" value="ServiceSTPQueue2@router1">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.timetolive" value="9000">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="jms.message.reply.timeout" value="60000">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="receiving.mode" value="Push">
+        <c:component id="cd-stp"/>
+    </property>
+    
+    <property id="ldap.password" value="secret">
+        <c:component id="cd-stp"/>
+    </property>
+    <property id="ldap.principal" value="uid=admin,ou=system">
+        <c:component id="cd-stp"/>
+    </property>
+    
+</configuration>

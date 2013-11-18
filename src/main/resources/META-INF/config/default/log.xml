@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/log" xmlns:c="http://baxter-it.com/config/component">
+
+    <console-appender id="CONSOLE" name="CONSOLE">
+        <layout>%c{1} [%d{ISO8601}] %m%n</layout>
+    </console-appender>
+
+    <rolling-file-appender id="FILE_ME" name="FILE_ME" file="/var/log/baxter/cd/cd-matching-engine.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_MV" name="FILE_MV" file="/var/log/baxter/cd/cd-market-view.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_OH" name="FILE_OH" file="/var/log/baxter/cd/cd-order-handler.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_EJB_UOMB" name="FILE_EJB_UOMB" file="/var/log/baxter/cd/cd-uomb.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_EJB_UOOB" name="FILE_EJB_UOOB" file="/var/log/baxter/cd/cd-uoob.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_EJB_UUB" name="FILE_EJB_UUB" file="/var/log/baxter/cd/cd-uub.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_EJB_COMMON" name="FILE_EJB_COMMON" file="/var/log/baxter/cd/cd-ejb_common.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_WEB" name="FILE_WEB" file="/var/log/baxter/cd/cd-web.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_UMR" name="FILE_UMR" file="/var/log/baxter/cd/cd-user-message-register.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_CDTS" name="FILE_CDTS" file="/var/log/baxter/cd/cd-trade-supervisor.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_EVOC" name="FILE_EVOC" file="/var/log/baxter/cd/cd-evoc.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_MVCPP" name="FILE_MVCPP" file="/var/log/baxter/cd/cd-market-view-cpp.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_PT" name="FILE_PT" file="/var/log/baxter/cd/pt.log" maxSize="100MB"
+        backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_CG" name="FILE_CG" file="/var/log/baxter/cd/cg.log" maxSize="100MB"
+        backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_AML" name="FILE_AML" file="/var/log/baxter/cd/cd-abos-message-listener.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_REVALUATOR" name="FILE_REVALUATOR" file="/var/log/baxter/cd/cd-revaluator.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_TDS" name="FILE_TDS" file="/var/log/baxter/cd/cd-tds.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_BLAZEDS" name="FILE_BLAZEDS" file="/var/log/baxter/cd/cd-blazeds.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <rolling-file-appender id="FILE_CPRO" name="FILE_CPRO" file="/var/log/baxter/cd/cd-cpro.log"
+        maxSize="100MB" backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <logger id="ROOT" name="ROOT" level="ERROR">
+
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-web" />
+        <c:component id="cd-umr" />
+        <c:component id="cd-cdts" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-mv-cpp" />
+        <c:component id="cd-pt" />
+        <c:component id="cd-cg" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-revaluator" />
+        <c:component id="cd-stp" />
+        <c:component id="cd-tds" />
+        <c:component id="cd-blazeds" />
+        <c:component id="cd-cpro" />
+
+        <c:component id="cd-devel-stpg" />
+        <c:component id="cd-devel-mmtc" />
+        
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger id="ROOT" name="ROOT" level="TRACE">
+        <c:component id="cd-appserver" />
+        <appender-ref ref="FILE_EJB_COMMON" />
+    </logger>
+
+    <logger id="com.baxter-me" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-me" />
+        <appender-ref ref="FILE_ME" />
+    </logger>
+
+    <logger id="com.baxter-tds" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-tds" />
+        <appender-ref ref="FILE_TDS" />
+    </logger>
+
+    <logger id="com.baxter-blazeds" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-blazeds" />
+        <appender-ref ref="FILE_BLAZEDS" />
+    </logger>
+
+    <logger id="com.baxter-cpro" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-cpro" />
+        <appender-ref ref="FILE_CPRO" />
+    </logger>
+
+    <logger id="com.baxter-mv" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-mv" />
+        <appender-ref ref="FILE_MV" />
+    </logger>
+
+    <logger id="com.baxter-oh" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-oh" />
+        <appender-ref ref="FILE_OH" />
+    </logger>
+
+    <logger id="com.baxter-ejb-uomb" name="com.baxter.cdv2.bean.user.UserOrderManipulationBean" level="TRACE"
+        additivity="false">
+        <c:component id="cd-appserver" />
+        <appender-ref ref="FILE_EJB_UOMB" />
+    </logger>
+
+    <logger id="com.baxter-ejb-uoob" name="com.baxter.cdv2.bean.user.UserOrderObservationBean" level="TRACE"
+        additivity="false">
+        <c:component id="cd-appserver" />
+        <appender-ref ref="FILE_EJB_UOOB" />
+    </logger>
+
+    <logger id="com.baxter-ejb-uub" name="com.baxter.cdv2.bean.user.UserUtilBean" level="TRACE" additivity="false">
+        <c:component id="cd-appserver" />
+        <appender-ref ref="FILE_EJB_UUB" />
+    </logger>
+
+    <logger id="com.baxter-web" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-web" />
+        <appender-ref ref="FILE_WEB" />
+    </logger>
+
+    <logger id="com.baxter-umr" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-umr" />
+        <appender-ref ref="FILE_UMR" />
+    </logger>
+
+    <logger id="com.baxter-cdts" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-cdts" />
+        <appender-ref ref="FILE_CDTS" />
+    </logger>
+
+    <logger id="com.baxter-evoc" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-evoc" />
+        <appender-ref ref="FILE_EVOC" />
+    </logger>
+
+    <logger id="com.baxter-mvcpp" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-mv-cpp" />
+        <appender-ref ref="FILE_MVCPP" />
+    </logger>
+    <logger id="com.baxter-pt" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-pt" />
+        <appender-ref ref="FILE_PT" />
+    </logger>
+    <logger id="com.baxter-cg" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-cg" />
+        <appender-ref ref="FILE_CG" />
+    </logger>
+    <logger id="com.baxter-aml" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-aml" />
+        <appender-ref ref="FILE_AML" />
+    </logger>
+    <logger id="com.baxter-revaluator" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-revaluator" />
+        <appender-ref ref="FILE_REVALUATOR" />
+    </logger>
+
+    <logger id="com.baxter-stp" name="com.baxter" level="TRACE" additivity="false">
+        <c:component id="cd-stp" />
+        <appender-ref ref="FILE_STP" />
+    </logger>
+
+</configuration>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/jvm" xmlns:c="http://baxter-it.com/config/component"
+    xmlns:conf="http://baxter-it.com/config">
+
+    <logging id="default" framework="logback">
+        <c:component id="cd-me" o="1"/>
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-appserver" />
+        <c:component id="cd-web" />
+        <c:component id="cd-umr" />
+        <c:component id="cd-cdts" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-mv-cpp" />
+        <c:component id="cd-pt" />
+        <c:component id="cd-cg" />
+        <c:component id="cd-stp" />
+        <c:component id="cd-aml" />
+        <c:component id="cd-revaluator" />
+        <c:component id="cd-tds" />
+        <c:component id="cd-blazeds" />
+        <c:component id="cd-cpro" />
+
+        <conf:reference id="log" type="logback">
+            <conf:parameter name="alias">logback-remote.xml</conf:parameter>
+        </conf:reference>
+    </logging>
+
+    <heap id="smallheap" initial="64M" maximum="64M">
+        <c:component id="cd-me" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-revaluator" />
+    </heap>
+
+    <heap id="mvheap" initial="64M" maximum="128M">
+        <c:component id="cd-mv" />
+    </heap>
+
+    <heap id="ejbheap" initial="768M" maximum="768M" maxperm="256M" perm="256M">
+        <c:component id="cd-appserver" />
+    </heap>
+
+    <heap id="webheap" initial="256M" maximum="512M">
+        <c:component id="cd-web" />
+    </heap>
+
+    <jmx id="unsecure" auth="false" ssl="false">
+        <c:component id="cd-umr">
+            <port>18002</port>
+        </c:component>
+        <c:component id="cd-oh">
+            <port>18003</port>
+        </c:component>
+        <c:component id="cd-mv">
+            <port>18004</port>
+        </c:component>
+        <c:component id="cd-me">
+            <port>18005</port>
+        </c:component>
+        <c:component id="cd-evoc">
+            <port>18006</port>
+        </c:component>
+        <c:component id="cd-cg">
+            <port>18007</port>
+        </c:component>
+        <c:component id="cd-cdts">
+            <port>18008</port>
+        </c:component>
+        <c:component id="cd-aml">
+            <port>18009</port>
+        </c:component>
+        <c:component id="cd-web">
+            <port>18011</port>
+        </c:component>
+        <c:component id="cd-appserver">
+            <port>18030</port>
+        </c:component>
+        <c:component id="cd-ato">
+            <port>18020</port>
+        </c:component>
+        <c:component id="cd-mv-cpp">
+            <port>18031</port>
+        </c:component>
+        <c:component id="cd-revaluator">
+            <port>18035</port>
+        </c:component>
+        <c:component id="cd-pt">
+            <port>18131</port>
+        </c:component>
+        <c:component id="cd-rabo">
+            <port>18080</port>
+        </c:component>
+    </jmx>
+
+    <system id="messagingType" name="com.baxter.cdv2.InternalMessagingType" value="STRING">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-appserver" />
+        <c:component id="cd-web" />
+        <c:component id="cd-evoc" />
+        <c:component id="cd-mv-cpp" />
+        <c:component id="cd-cg" />
+        <c:component id="cd-tds" />
+        <c:component id="cd-blazeds" />
+        <c:component id="cd-cpro" />
+    </system>
+
+    <system id="java.net.preferIPv4Stack" name="java.net.preferIPv4Stack" value="true">
+        <c:component id="cd-web" />
+    </system>
+
+    <system id="statistics.configuration" name="statistics.configuration">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-appserver" />
+        <c:component id="cd-devel-mmtc" />
+
+        <conf:reference id="lmp" type="asis">
+            <conf:parameter name="file">asis/statistics-configuration.xml</conf:parameter>
+        </conf:reference>
+    </system>
+
+    <system id="dbdriver" name="com.baxter.cdv2.SQLType" value="POSTGRESQL">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+        <c:component id="cd-cdts" />
+    </system>
+
+    <system id="cpdir" name="cpdir" value="$VAR_PATH">
+        <c:component id="cd-stp" />
+    </system>
+
+    <system id="tds-jetty-port" name="jetty.port" value="8400">
+        <c:component id="cd-tds" />
+    </system>
+
+    <system id="cpro-jetty-port" name="jetty.port" value="12380">
+        <c:component id="cd-cpro" />
+    </system>
+
+    <system id="blazeds-jetty-port" name="jetty.port" value="12280">
+        <c:component id="cd-blazeds" />
+    </system>
+    
+    <system id="mm-id-doc" name="MMID" value="DOC">
+        <c:component id="cd-mm-doc" />
+    </system>
+    
+    <system id="mm-id-tbc" name="MMID" value="TBC">
+        <c:component id="cd-mm-tbc" />
+    </system>
+    
+    <system id="mm-id-rum" name="MMID" value="RUM">
+        <c:component id="cd-mm-rum" />
+    </system>
+
+    <option id="gc2" value="-XX:+DisableExplicitGC">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <option id="gc3" value="-XX:+UseParNewGC">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <option id="gc4" value="-XX:+UseConcMarkSweepGC">
+        <c:component id="cd-me" />
+        <c:component id="cd-mv" />
+        <c:component id="cd-oh" />
+    </option>
+
+    <classpath id="dm-message-router-1.5.7.jar" url="file:/usr/share/java/dm-message-router-1.5.7.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-marshaller-1.1.7.jar" url="file:/usr/share/java/dm-marshaller-1.1.7.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="eficc-client-3.7.3.jar" url="file:/usr/share/java/eficc-client-3.7.3.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="eficc-client-samples-3.7.3.jar" url="file:/usr/share/java/eficc-client-samples-3.7.3.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-client-model-1.1.21.jar" url="file:/usr/share/java/dm-client-model-1.1.21.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-confirmation-server-client-2.0.14.jar" url="file:/usr/share/java/dm-confirmation-server-client-2.0.14.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-core-1.1.87.jar" url="file:/usr/share/java/dm-core-1.1.87.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+    
+    <classpath id="dm-fx-3000-client-2.21.2.jar" url="file:/usr/share/java/dm-fx-3000-client-2.21.2.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-service-broker-client-2.1.15.jar" url="file:/usr/share/java/dm-service-broker-client-2.1.15.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-smr-client-2.1.7.jar" url="file:/usr/share/java/dm-smr-client-2.1.7.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="dm-utils-1.4.7.jar" url="file:/usr/share/java/dm-utils-1.4.7.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="commons-beanutils-1.6.jar" url="file:/usr/share/java/commons-beanutils-1.6.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="xpp3-1.1.4c.jar" url="file:/usr/share/java/xpp3-1.1.4c.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="xstream-1.3.1.jar" url="file:/usr/share/java/xstream-1.3.1.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="w3c-http-1.0.jar" url="file:/usr/share/java/w3c-http-1.0.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="iaik-jce-full-1.0.jar" url="file:/usr/share/java/iaik-jce-full-1.0.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+    <classpath id="iaik-ssl-1.0.jar" url="file:/usr/share/java/iaik-ssl-1.0.jar">
+        <c:component id="cd-mm-doc" />
+    </classpath>
+
+<!--  -->
+    <classpath id="commons-logging-1.1.jar" url="file:/usr/share/java/tbc/commons-logging-1.1.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+
+    <classpath id="jibx-run-1.1.jar" url="file:/usr/share/java/tbc/jibx-run-1.1.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-core-if-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-core-if-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-core-impl-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-core-impl-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-streaming-client-example-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-streaming-client-example-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-streaming-if-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-streaming-if-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-test-server-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-test-server-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-xml-impl-1.13.19.jar" url="file:/usr/share/java/tbc/jpmfxapi-xml-impl-1.13.19.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="jpmfxapi-xml-impl-1.13.19-streaming.jar" url="file:/usr/share/java/tbc/jpmfxapi-xml-impl-1.13.19-streaming.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="log4j-1.2.9.jar" url="file:/usr/share/java/tbc/log4j-1.2.9.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="transport-1.8.jar" url="file:/usr/share/java/tbc/transport-1.8.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+    
+    <classpath id="xpp3-1.1.3.8.jar" url="file:/usr/share/java/tbc/xpp3-1.1.3.8.jar">
+        <c:component id="cd-mm-tbc" />
+    </classpath>
+
+</configuration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://baxter-it.com/config/log"
+    xmlns:c="http://baxter-it.com/config/component">
+
+    <rolling-file-appender id="FILE_GENERIC_LOG" name="FILE_GENERIC_LOG" maxSize="100MB"
+        backupIndex="10">
+        <layout>[%d{ISO8601}][%p][%t] - %m%n</layout>
+    </rolling-file-appender>
+
+    <logger id="com.baxter-base" name="com.baxter" level="TRACE" additivity="false">
+        <appender-ref ref="FILE_GENERIC_LOG"/>
+        <c:component id="cd-devel-stpg"/>
+        <c:component id="cd-devel-mmtc" />
+    </logger>
+
+</configuration>
