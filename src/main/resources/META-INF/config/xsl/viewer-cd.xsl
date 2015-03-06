@@ -39,6 +39,8 @@
                 mode="instances" />
             <xsl:apply-templates select="conf:configuration-source/conf:request/conf:parameter[@id='cd-mm-tbc']"
                 mode="instances" />
+            <xsl:apply-templates select="conf:configuration-source/conf:request/conf:parameter[@id='cd-mm-bab']"
+                mode="instances" />
             <xsl:apply-templates select="conf:configuration-source/conf:request/conf:parameter[@id='cd-mm-rum']"
                 mode="instances" />
         </conf:instances>
@@ -64,6 +66,7 @@
                 <conf:statistics />
                 <conf:classpath />
             </c:component>
+            <c:component id="cd-mm-bab" title="BAB MarketMaker"></c:component>
             <c:component id="cd-mm-rum" title="RUM MarketMaker">
                 <conf:statistics />
                 <conf:classpath />
@@ -81,6 +84,7 @@
             <c:component id="cd-devel-mmtc" title="MMTC (devel)"></c:component>
             <c:component id="cd-abos-message-listener" title="ABOS Message Listener"></c:component>
             <c:component id="cd-algo" title="Algo Component"></c:component>
+            <c:component id="cd-cdip" title="Billing tools for Currency Dealing"></c:component>
         </c:components>
     </xsl:template>
 
@@ -167,6 +171,19 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>BAB MarketMaker</td>
+                    <td>
+                        <xsl:value-of select="/conf:request/conf:parameter[@id='cd-mm-bab']" />
+                    </td>
+                    <td>
+                        <input type="text" name="cd-mm-bab">
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="/conf:request/conf:parameter[@id='cd-mm-bab']" />
+                            </xsl:attribute>
+                        </input>
+                    </td>
+                </tr>
+                <tr>
                     <td>RUM MarketMaker</td>
                     <td>
                         <xsl:value-of select="/conf:request/conf:parameter[@id='cd-mm-rum']" />
@@ -223,6 +240,7 @@
                 <!-- : cd-mm-doc -->
                 <!-- : cd-mm-rum -->
                 <!-- : cd-mm-tbc -->
+                <!-- : cd-mm-bab -->
                 <!-- : cd-stp -->
                 <xsl:apply-templates select="/conf:instances/c:component" mode="component-row" />
 
