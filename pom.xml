@@ -10,7 +10,7 @@
 
     <groupId>com.baxter.config.processor.cd</groupId>
     <artifactId>baxter-config-processor-currency-dealing</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
 
     <name>Configuration Processor for Currency Dealing</name>
     <description>Configuration processor to be used with Baxter Configuration Server.</description>
